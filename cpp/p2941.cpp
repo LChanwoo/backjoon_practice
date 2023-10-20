@@ -1,27 +1,20 @@
 #include<iostream>
 #include<string>
-#include<algorithm>
 #include<vector>
+
 using namespace std;
 
-
 int main(){
+
+    vector<string> strV={"c=","c-","dz=","d-","lj","nj","s=","z="};
+
     string str;
     cin >> str;
-    vector<string> strV={"c=","c-","dz=","d-","lj","nj","s=","z="};
-    vector<char> cv={"c","d","l",""};
-    for(int i=0;i<str.length();){
-        string tmp ;
-        while(true){
-            if(find(strV.begin(),strV.end(),tmp)!=strV.end())tmp.push_back(str[i]);
-            i++
-            if(find(strV.begin(),strV.end(),tmp)!=strV.end()){
-//                cout<< tmp << " ";
-                break;
-            }
-            cout<< i << " ";
-        }
+    for(int i=0;i<8;i++){
+        while(str.find(strV[i])!=string::npos)
+            str.replace(str.find(strV[i]),strV[i].length(),"!");
     }
+    cout <<str.length();
     return 0;
 
 }
