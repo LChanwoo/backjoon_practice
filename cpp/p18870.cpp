@@ -21,7 +21,6 @@ int main(){
         }else{
             m.insert({X[i],cnt});
             X[i] =cnt++;
-            
         }
     }
     for(int i=0;i<N;i++){
