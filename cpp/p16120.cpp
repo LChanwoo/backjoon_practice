@@ -9,18 +9,18 @@ int main(){
     stack<char> stk;
 
     for(int i=0; i<s.length();i++){
-        stk.push(s[i]);
-        if(stk.top()=='A' && s[i]=='P'){
-            stk.pop();
-            stk.pop();
-        }else if(stk.top()!='A' &&s[i]=='P'){
+        if(s[i]=='P'){
             stk.push(s[i]);
-        }else{
-            cout <<"NP";
-            return 0;
+        }else if(s[i]=='A'){
+            if(stk.size()>=2 && stk.top()=='P'){
+                stk.pop();
+                stk.pop();
+                stk.push('P');
+            }else{
+                cout << "NP" << endl;
+                return 0;
+            }
         }
-
-
     }
     return 0;
 }
