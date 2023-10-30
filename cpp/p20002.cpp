@@ -3,6 +3,9 @@
 // using namespace std;
 
 // int main(){
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     cout.tie(NULL);
 //     int N;
 //     cin >> N;
 //     vector<vector<int>> v(N+1,vector<int>(N+1));
@@ -16,8 +19,8 @@
 //             }
 //         }
 //     }
-//     int k=2;
-//     while(k<=N){
+//     int k=N;
+//     while(k>=2){
 //         int x=0, y=0;
 //         while(x+k<=N && y+k<=N){
 //             int sum = 0;
@@ -39,7 +42,7 @@
 //                 y++;
 //             }
 //         }
-//         k++;
+//         k--;
 //     }
 //     cout << max << endl;
 //     return 0;
