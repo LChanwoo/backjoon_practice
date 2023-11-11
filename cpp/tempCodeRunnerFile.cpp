@@ -1,3 +1,3 @@
-=1;i<=N;i++){
+    for(int i=1; i<=N; i++){
         cout << dp[i] << " ";
     }
