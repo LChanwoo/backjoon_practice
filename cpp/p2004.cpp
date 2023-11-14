@@ -18,18 +18,15 @@ int main(){
 
     // n!에 있는 2의 개수
     for(long long i = 2; i <= n; i *= 2){
-        two += n / i;
-        cout << two << endl;    
+        two += n / i;   
     }
     // (n-m)!에 있는 2의 개수
     for(long long i = 2; i <= n-m; i *= 2){
         two -= (n-m) / i;
-        cout << two << endl;
     }
     // m!에 있는 2의 개수
     for(long long i = 2; i <= m; i *= 2){
         two -= m / i;
-        cout << two << endl;
     }
 
     // n!에 있는 5의 개수
