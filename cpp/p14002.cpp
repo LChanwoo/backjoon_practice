@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 
 using namespace std;
 
@@ -23,11 +24,16 @@ int main(){
 
     cout << *max_element(dp, dp + n);
 
+    // 역추적
     int i = n-1;
+    // max는 dp의 최댓값이므로, dp의 최댓값부터 시작해서 dp[i] == max인 i를 찾는다.
     int j = max;
+    // ans는 역추적한 수열을 저장하는 배열
     int ans[max];
     while(i>=0){
+        // dp[i] == j인 i를 찾으면, ans[j-1]에 arr[i]를 저장하고, j를 1 감소시킨다.
         if(dp[i] == j){
+            // ans는 역추적한 수열을 저장하는 배열이므로, ans[j-1]에 arr[i]를 저장한다.
             ans[j-1] = arr[i];
             j--;
         }

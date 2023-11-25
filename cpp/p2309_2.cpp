@@ -20,6 +20,7 @@ int main(){
                     if(k==i||k==j)continue;
                     cout << a[k] << '\n';
                 }
+                return 0;
             }
         }
     }
