@@ -7,6 +7,9 @@ using namespace std;
 int prefix[250001];
 int xday[250001];
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int n, x;
     cin >> n >> x;
     for (int i = 1;i<=n;i++){
@@ -17,7 +20,8 @@ int main(){
         }
     }   
     int max = *max_element(xday, xday + n);
-    int cnt = count(xday, xday + n, max);
+    int cnt = count(xday, xday + n+1, max);
+
     if(max==0){
         cout << "SAD\n";
         return 0;
