@@ -15,7 +15,6 @@ void dfs(int num, int cnt){
         return;
     }
     for (int i = num; i <= n;i++){
-        if(visited[i]==1)continue;
         visited[i] = 1;
         arr[cnt] = i;
         dfs(i, cnt + 1);
