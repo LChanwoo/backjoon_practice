@@ -1,6 +1,4 @@
-for(int i = 0; i < N; i++){
-            for(int j = 0; j < N; j++){
-                cout << a[i][j] << " ";
-            }
-            cout << '\n';
-        }
+        // if(a[y][x] == 2){
+        //     a[y][x] = 10;
+        //     return;
+        // }
