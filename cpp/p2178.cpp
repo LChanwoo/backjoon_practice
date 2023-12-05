@@ -11,11 +11,12 @@ int dp[101][101];
 int n, m;
 const int dy[4] = {-1, 0, 1, 0};
 const int dx[4] = {0, 1, 0, -1};
+string s;
 
 void bfs(int y, int x){
     queue<pair<int,int>> q;
     visited[y][x] = 1;
-    q.push(make_pair(y, x));
+    q.push({y, x});
     while(q.size()){
         int y = q.front().first;
         int x = q.front().second;
@@ -30,7 +31,7 @@ void bfs(int y, int x){
             if(dp[ny][nx]==0)
                 continue;
             visited[ny][nx] = visited[y][x] + 1;
-            q.push(make_pair(ny, nx));
+            q.push({ny, nx});
         }
     }
 }
@@ -38,14 +39,9 @@ void bfs(int y, int x){
 int main(){
     cin >> n >> m;
     for (int i = 0; i<n;i++){
-        string s;
         cin >> s;
-        for (int j = 0; j < m; j++)
-        {
-            dp[i][j] = s[j] - '0';
-        }
+        for (int j = 0; j < m; j++) dp[i][j] = s[j] - '0';
     }
-
     bfs(0, 0);
 
     cout << visited[n - 1][m - 1];

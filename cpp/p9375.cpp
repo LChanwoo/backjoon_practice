@@ -21,7 +21,7 @@ int main(){
         for(auto i : m){
             ans *= (i.second + 1);
         }
-        // ans - 1 because we don't count the case where we don't wear anything
+        // ans - 1 = 아무것도 안입는 경우 제외
         cout << ans - 1 << '\n';
         m.clear();
     }

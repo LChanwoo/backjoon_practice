@@ -15,8 +15,6 @@ void preOrder(int here)
     for(int there : node[here]){
         preOrder(there);
     }
-
-
 }
 void inOrder(int here)
 {

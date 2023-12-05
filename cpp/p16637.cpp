@@ -2,26 +2,17 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-
-int n;
+int n, ans = -2147483647;
 char a[20];
-int ans = -2147483647;
 
 int calc(int x, int y, char op){
-    if(op=='+'){
-        return x + y;
-    }
-    else if(op=='-'){
-        return x - y;
-    }
-    else if(op=='*'){
-        return x * y;
-    }
+    if(op=='+')return x + y;
+    else if(op=='-')return x - y;
+    else if(op=='*')return x * y;
     return 0;
 }
 
 void go(int idx, int sum){
-    cout << idx <<" ::: "<<sum << '\n';
     if(idx>=n){
         ans = max(ans, sum);
         return;

@@ -1,22 +1,19 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
 using namespace std;
 
+int t,n;
 int main(){
-    int T;
-    cin >> T;
-    vector<int> v(11);
-    v[1] = 1;
-    v[2] = 2;
-    v[3] = 4;
+    cin >> t;
+    int a[11];
+    a[1] = 1;
+    a[2] = 2;
+    a[3] = 4;
     for(int i=4;i<11;i++){
-        v[i] = v[i-1] + v[i-2] + v[i-3];
+        a[i] = a[i-1] + a[i-2] + a[i-3];
     }
-    for(int i=0;i<T;i++){
-        int n;
+    for(int i=0;i<t;i++){
         cin >> n;
-        cout << v[n] << '\n';
+        cout << a[n] << '\n';
     }
     return 0;
 }
