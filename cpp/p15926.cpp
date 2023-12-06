@@ -4,20 +4,21 @@
 #include<utility>
 using namespace std;
 
+int dp[200001] = {0};
+string s;
+stack<int> st;
+
 int main(){
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    int dp[200001] = {0};
-    stack<int> st;
-    int cnt = 0;
-    int max = 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int n, cnt = 0,max = 0;
+    
+    cin >> n >> s;
 
     for(int i=0;i<n;i++){
-        if(s[i]=='('){
-            st.push(i);
-        }
+        if(s[i]=='(') st.push(i);
         else if(!st.empty() && s[i]==')'){
             dp[st.top()] = 1;
             dp[i] = 1;
@@ -28,9 +29,8 @@ int main(){
         if(dp[i]==1){
             cnt++;
         }else{
-            if(cnt>max){
-                max = cnt;
-            }
+            if(cnt>max) max = cnt;
+            
             cnt = 0;
         }
     }
