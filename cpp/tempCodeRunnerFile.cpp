@@ -1,1 +1,1 @@
-        dfs(i, depth+1);
+ns &= words[i];
