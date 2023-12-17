@@ -5,37 +5,34 @@
 using namespace std;
 
 int n, k;
-// 어떤 단어가 배울 수 있는지를 나타내는 비트마스크
 int words[51];
-// 배운 알파벳의 수
 int learned = 0;
-long long ans = (1 << 26) - 1;
+string s;
+
+int go (int index, int k, int cnt){
+    if(k<0) return 0;
+    if(index==26){
+        int cnt = 0;
+        for (int i = 0; i < n;i++){
+            if((words[i] & learned) == words[i]) cnt++;
+        }
+        return cnt;
+    }
+    int ans = go(index + 1, k - 1, cnt + 1);
+
+    return ans;
+}
 
 int main(){
     cin >>  n >> k;
     for (int i = 0; i < n;i++){
-        string s;
         cin >> s;
         for (char x : s){
             words[i] |= (1 << (x - 'a'));
         }
     }
-    for(int s : words){
-        cout << s << '\n';
-    }
-    if(k<5){
-        cout << 0;
-        return 0;
-    }
-    for (int i = 0; i < n;i++){
-        ans&= words[i];
-    }
-    for(int i=0;i<26;i++){
-        if((ans&(1<<i))){
-            learned++;
-        }
-    }
-    cout << learned;
+
+    cout << go(0, k, 0);
 
     return 0;
 }
