@@ -4,6 +4,9 @@
 using namespace std;
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int n;
     cin >> n;
     int arr[n];
@@ -16,6 +19,7 @@ int main(){
     for (int i = 0; i < n; i++) {
         dp[i] = 1;
         for (int j = 0; j < i;j++){
+            // arr[i]가 arr[j]보다 크고, dp[i]가 dp[j] + 1보다 작으면 dp[i]를 dp[j] + 1로 갱신한다.
             if(arr[i] > arr[j] && dp[i] < dp[j] + 1 )
                 dp[i] = dp[j] + 1;
         }
