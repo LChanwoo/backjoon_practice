@@ -3,14 +3,12 @@
 #include<algorithm>
 using namespace std;
 
-long long n, m, a, cnt, mid,l = 1, r = 6000000004, ans=0;
+long long n, m, a,mid, cnt,l = 1, r = 60000000004, ans=0;
 long long v[10001];
 
-bool check(int mid){
+bool check(long long mid){
     cnt = m;
-    
     for (int i = 0; i < m;i++) cnt += mid / v[i];
-    cout << mid << " : " << cnt << '\n';
     return cnt >= n;
 }
 
@@ -39,7 +37,6 @@ int main(){
     for (int i = 0; i < m;i++){
         cnt += (ans - 1) / v[i];
     }
-    cout << ans << "  "<<cnt << '\n';
     for(int i=0;i<m;i++){
         if(ans%v[i]==0) cnt++;
         if(cnt==n){
