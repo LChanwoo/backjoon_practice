@@ -18,11 +18,10 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int N;
+    int N,a;
     priority_queue<long long, vector<long long>, cmp> pq;
     cin >> N;
     for (int i = 0; i < N;i++){
-        int a;
         cin >> a;
         if(a==0){
             if(pq.empty()){

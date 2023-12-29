@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 #include<algorithm>
 #include<stack>
 using namespace std;
@@ -18,12 +17,11 @@ int main(){
         while(st.size() && st.top().first <= a[i]){
             ans += st.top().second;
             if(st.top().first == a[i]) cnt = st.top().second + 1;
-            else cnt = 1;
+            else cnt = 1;   
             st.pop();
         }
         if(st.size()) ans++;
         st.push({a[i], cnt});
-        cout << cnt << '\n';
     }
     cout << ans;
     return 0;

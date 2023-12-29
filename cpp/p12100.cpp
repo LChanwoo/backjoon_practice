@@ -25,10 +25,12 @@ void dfs(int depth, int start, vector<vector<int>> v){
             ans = max;
         return;
     }
-    vector<vector<int>> temp;
-    memcpy(temp, v, sizeof(v));
-    for (int i = )
-        return;
+    // 1. 위로 이동
+    vector<vector<int>> temp(n, vector<int>(n, 0));
+    for (int i = 0; i < n;i++){
+        for(int j=0;j<n;j++){
+        }
+    }
 }
 
 int main(){
