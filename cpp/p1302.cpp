@@ -11,8 +11,7 @@ vector<string> v;
 int main(){
     cin >> N;
     for (int i = 0; i < N;i++){
-        cin >> s;
-        m[s]++;
+        cin >> s; m[s]++;
         if(m[s]>mx) mx = m[s];
     }
     for(auto i:m){
