@@ -10,7 +10,6 @@ void dfs(int start, vector<int> *a){
     for(int i=0;i<a[start].size();i++){
         if(!visited[a[start][i]]){
             ans++;
-            cout << a[start][i] << '\n';
             dfs(a[start][i], a);
         }
     }
@@ -20,10 +19,11 @@ int main(){
     cin >> n >> m;
     vector<int> a[n+1];
     for(int i=0;i<m;i++){
-        cin >> tmp1>>tmp2;
+        cin >> tmp1>> tmp2;
         a[tmp1].push_back(tmp2);
         a[tmp2].push_back(tmp1);
     }
+    fill(visited, visited + 101, 0);
     dfs(1,a);
     cout << ans;
 }
