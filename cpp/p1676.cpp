@@ -7,11 +7,11 @@ int main(){
     cin >> n;
 
     int two=0, five=0;
-    while(n>0){
-        two += n / 2;
-        five += n / 5;
-        n /= 2;
-        n /= 5;
+    for (int i = 2; i <= n;i*=2){
+        two += n / i;
+    }
+    for (int i = 5; i <= n;i*=5){
+        five += n / i;
     }
     cout << min(two, five);
     return 0;
