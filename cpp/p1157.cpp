@@ -5,7 +5,8 @@ using namespace std;
 
 int main(){
     string str;
-    char c[26]={0};
+    int c[26]={0};
+    fill(c, c + 26, 0);
     cin >> str;
     for (int i = 0; i < str.length();i++){
         if(str[i]>='a'){
