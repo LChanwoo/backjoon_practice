@@ -2,8 +2,6 @@
 using namespace std;
 
 int main(){
-    int N;
-    cin >> N;
     while(true){
         int a, b;
         cin >> a >> b;
